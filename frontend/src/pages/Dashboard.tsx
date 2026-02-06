@@ -8,6 +8,7 @@ interface Task {
   title: string;
   description: string;
   status: 'PENDING' | 'IN_PROGRESS' | 'COMPLETED';
+  user?: string;
 }
 
 const Dashboard: React.FC = () => {
@@ -152,7 +153,7 @@ const Dashboard: React.FC = () => {
                 <p className="text-gray-600 text-sm line-clamp-3 mb-4">{task.description}</p>
                  {user?.role === 'ADMIN' && (
                      <div className="mt-4 pt-4 border-t border-gray-50 text-xs text-gray-400 flex items-center">
-                         <span>User ID: {task.user}</span> Using this for now as user name isn't populated for list for simplicity or we can update controller
+                         <span>User ID: {task.user}</span> {/* Using this for now as user name isn't populated for list for simplicity or we can update controller */}
                      </div>
                  )}
               </div>
